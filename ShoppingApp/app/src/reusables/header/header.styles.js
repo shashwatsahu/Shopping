@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: normalize(16),
-    color: colors.black,
+    color: colors.redishGrey,
   },
   arrowStyle: {
     height: heightScale(15),

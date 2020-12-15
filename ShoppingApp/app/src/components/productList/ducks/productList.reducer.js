@@ -14,7 +14,6 @@ const initialState = {
 export default function ProductReducer(state = initialState, action) {
   switch (action.type) {
     case ActionTypes.PRODUCT_LIST_LOADING:
-      console.log('loading:');
       return {
         ...state,
         loading: true,
@@ -22,7 +21,6 @@ export default function ProductReducer(state = initialState, action) {
       };
 
     case ActionTypes.PRODUCT_LIST_SUCCESS:
-      console.log('action:', action.payload);
       return {
         ...state,
         loading: false,
@@ -39,7 +37,6 @@ export default function ProductReducer(state = initialState, action) {
       };
 
     case ActionTypes.PRODUCT_LIST_ERROR:
-      console.log('error:', action.payload.products);
       return {
         ...state,
         loading: false,
