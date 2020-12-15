@@ -8,11 +8,13 @@ const initialState = {
   },
   error: null,
   productData: [],
+  filterData: [],
 };
 
 export default function ProductReducer(state = initialState, action) {
   switch (action.type) {
     case ActionTypes.PRODUCT_LIST_LOADING:
+      console.log('loading:');
       return {
         ...state,
         loading: true,
@@ -20,10 +22,16 @@ export default function ProductReducer(state = initialState, action) {
       };
 
     case ActionTypes.PRODUCT_LIST_SUCCESS:
+      console.log('action:', action.payload);
       return {
         ...state,
         loading: false,
-        productData: action.payload.products,
+        productData:
+          action.payload &&
+          action.payload.data &&
+          action.payload.data.length > 0
+            ? action.payload.data
+            : [],
         apiState: {
           ...state.apiState,
           isSuccess: true,
@@ -31,6 +39,7 @@ export default function ProductReducer(state = initialState, action) {
       };
 
     case ActionTypes.PRODUCT_LIST_ERROR:
+      console.log('error:', action.payload.products);
       return {
         ...state,
         loading: false,
@@ -40,6 +49,20 @@ export default function ProductReducer(state = initialState, action) {
           ...state.apiState,
           isError: true,
         },
+      };
+
+    case ActionTypes.CLEAR_PRODUCT_API_STATE:
+      return {
+        ...state,
+        apiState: {
+          ...initialState,
+        },
+      };
+
+    case ActionTypes.ADD_FILTER_DATA:
+      return {
+        ...state,
+        filterData: action.payload,
       };
 
     default:

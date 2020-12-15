@@ -15,6 +15,10 @@ export const fetchProductError = (error) => ({
   payload: {error},
 });
 
+export const clearProductState = () => ({
+  type: ActionTypes.CLEAR_PRODUCT_API_STATE,
+});
+
 export function fetchProducts() {
   return (dispatch) => {
     dispatch(fetchProductLoading());
@@ -36,3 +40,8 @@ function handleErrors(response) {
   }
   return response;
 }
+
+export const addFilterData = (data) => ({
+  type: ActionTypes.ADD_FILTER_DATA,
+  payload: data,
+});
