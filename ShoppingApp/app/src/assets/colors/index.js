@@ -1,0 +1,26 @@
+const colors = {
+  blueGray: '#969699',
+  black: '#000000',
+  white: 'rgb(255,255,255)',
+  shadowColor: 'rgba(0, 0, 0, 0.43)',
+  redishGrey: '#a37f6f',
+  loginBackground: 'rgb(235,236,240)',
+  fadedBlue: '#7584ad',
+  veryLightBlue: '#ebecf0',
+  lightGrey: '#dfe0e6',
+  blackTransparency: 'rgba(0, 0, 0, 0.7)',
+  pinkishTan: '#e09873',
+  blueGrayTransparent: 'rgba(150, 150, 153, 0.9)',
+  imagePlaceholder: '#ccdaf0',
+  red: '#ff0000',
+  darkRed: '#800000',
+  errorColor: 'rgb(213, 0, 0)',
+  darkGreyBlue: '#314570',
+  duckEggBlue: '#d5e7ea',
+  fadedWhite: '#ffffff',
+  fadedBlueTransparent: 'rgba(117, 132, 173, 0.2)',
+  seaGreen: '#0e9d45',
+  lightRed: '#ffeeee',
+};
+
+export default colors;
