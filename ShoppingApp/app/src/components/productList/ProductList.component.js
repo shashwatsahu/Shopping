@@ -8,6 +8,7 @@ import {styles} from './ProductList.styles';
 import {Header} from '../../reusables/header';
 import {BottomBar} from '../../reusables/bottomBar';
 import {FilterModal} from '../../reusables/filter/FilterModal';
+import {EmptyView} from '../../reusables/emptyView/EmptyView';
 import {FILTER, APP_NAME} from '../../assets/strings';
 
 class ProductList extends React.Component {
@@ -80,6 +81,7 @@ class ProductList extends React.Component {
           numColumns={2}
           windowSize={60}
           showsVerticalScrollIndicator={false}
+          ListEmptyComponent={() => <EmptyView />}
         />
       </View>
     );
