@@ -7,21 +7,26 @@
  */
 
 import React from 'react';
-import {SafeAreaView, View, Text, StatusBar} from 'react-native';
+import {SafeAreaView, StyleSheet, StatusBar} from 'react-native';
 import {Provider} from 'react-redux';
 import store from './src/config/store';
+import ProductList from './src/components/productList/ProductList.component';
 
 export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
         <StatusBar />
-        <SafeAreaView>
-          <View>
-            <Text>{'Hi'}</Text>
-          </View>
+        <SafeAreaView style={styles.container}>
+          <ProductList />
         </SafeAreaView>
       </Provider>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
